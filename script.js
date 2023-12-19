@@ -13,6 +13,7 @@ window.onload = function(){
     velY = 0;
     grid = 20;
     tam = 3;
+    Pontos = 0;
 
 
     //chamada da funçao jogo a cada 100ms
@@ -74,7 +75,10 @@ function jogo(){
            positionX=10;
            positionY=10;
            velX=velY=0;
+           Pontos = 0;
        }
+
+       
    }
 
 
@@ -95,6 +99,13 @@ function jogo(){
         tam++;
         foodX = Math.floor(Math.random()*grid);
         foodY = Math.floor(Math.random()*grid);
+        Pontos++;
     }
+
+
+    //criando o placar
+    ctx.fillStyle = "#20162B";
+    ctx.font = "20px Arial";
+    ctx.fillText("Placar: "+ Pontos, 10, canvas.height-20);    
 
 }
